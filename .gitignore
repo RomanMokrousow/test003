@@ -16,3 +16,5 @@ vendor/
 
 #my
 local/
+*.tmp
+*.local

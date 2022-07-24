@@ -4,6 +4,7 @@ import(
 	"net"
 	"os"
 	"fmt"
+	"project.local/domain/src/common/cmd"
 )
 
 type TMessage struct{
@@ -15,7 +16,7 @@ type TMessage struct{
 func processBlock(conn *net.UDPConn, from net.Addr, data []byte){
 	var Result string;
 	fmt.Printf("[%v:%v] %v\n",conn,from,data);
-	r,e := Execute(string(data));
+	r,e := cmd.Execute(string(data));
 	if e != nil {
 		Result = fmt.Sprintf("ERROR: %s",e.Error())
 	}else{
